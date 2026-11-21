@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositorio Académico de Inteligencia Artificial | aleepg07</title>
+  <meta name="description" content="Portfolio y Repositorio de clases, proyectos y talleres prácticos de la Especialización en Inteligencia Artificial - UPTC.">
+  <meta name="author" content="aleepg07">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+            },
+            accent: {
+              emerald: '#10b981',
+              violet: '#8b5cf6',
+              amber: '#f59e0b',
+              cyan: '#06b6d4',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Efectos de gradiente y blur */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(14, 165, 233, 0.35);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(14, 165, 233, 0.15) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
+    }
+    .badge-glow {
+      box-shadow: 0 0 15px -3px rgba(14, 165, 233, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-500 selection:text-white">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-violet flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <i data-lucide="brain-circuit" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg text-white tracking-tight flex items-center gap-2">
+            Ciencia de Datos <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-400 font-mono border border-brand-500/30">UPTC</span>
+          </span>
+          <p class="text-xs text-slate-400">Especialización en Inteligencia Artificial</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <a href="#actividades" class="hover:text-brand-400 transition-colors">Actividades & Talleres</a>
+        <a href="#pipeline" class="hover:text-brand-400 transition-colors">Pipeline de Datos</a>
+        <a href="#archivos" class="hover:text-brand-400 transition-colors">Archivos del Repositorio</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/aleepg07/Ciencia-de-datos" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium border border-slate-700 transition shadow-sm hover:shadow">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-16 pb-20 overflow-hidden hero-glow border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-brand-500/30 text-brand-400 text-xs font-mono font-medium mb-6 badge-glow">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Repositorio Oficial — Sincronizado con GitHub
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-tight mb-6">
+          Portafolio de <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-accent-cyan to-accent-violet">Inteligencia Artificial</span> y Ciencia de Datos
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+          Repositorio integral de clases, talleres prácticos, preparación de datos a gran escala y modelos de Machine Learning desarrollados en la 
+          <strong class="text-white font-medium">Universidad Pedagógica y Tecnológica de Colombia (UPTC)</strong>.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://colab.research.google.com/github/aleepg07/Ciencia-de-datos/blob/main/Archivo_clase.ipynb" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-medium shadow-lg shadow-brand-500/25 transition">
+            <i data-lucide="play-circle" class="w-5 h-5"></i>
+            <span>Abrir Cuaderno en Colab</span>
+          </a>
+          
+          <a href="https://github.com/aleepg07/Ciencia-de-datos" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 font-medium border border-slate-700 transition">
+            <i data-lucide="git-branch" class="w-5 h-5"></i>
+            <span>Explorar Repositorio Git</span>
+          </a>
+
+          <a href="consumos_duitama_preparado.csv" download
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 font-medium border border-slate-800 hover:border-slate-700 transition text-sm">
+            <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
+            <span>Descargar Dataset Limpio (CSV)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counters -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-5xl mx-auto">
+        <div class="glass-card p-5 rounded-2xl text-center">
+          <div class="text-2xl sm:text-3xl font-display font-bold text-brand-400">275,387</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Mediciones Crudas</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">4 Sedes UPTC (2018 - 2025)</div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl text-center">
+          <div class="text-2xl sm:text-3xl font-display font-bold text-accent-emerald">68,487</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Registros Limpios</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Sede Duitama (100% Sin Nulos)</div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl text-center">
+          <div class="text-2xl sm:text-3xl font-display font-bold text-accent-violet">4 Fases</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Metodología ML</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Exploración, Limpieza, EDA, Modelado</div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl text-center">
+          <div class="text-2xl sm:text-3xl font-display font-bold text-accent-amber">20 Atributos</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Espacio de Features</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Codificados, Cíclicos y Escalados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVIDADES Y TALLERES ================= -->
+  <section id="actividades" class="py-16 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-brand-400 uppercase tracking-widest mb-2">
+            <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+            Catálogo de Entregas
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+            Actividades Académicas y Talleres Prácticos
+          </h2>
+          <p class="text-slate-400 text-sm mt-1 max-w-2xl">
+            Proyectos evaluados en los módulos de Ciencia de Datos, Machine Learning e Introducción a la Inteligencia Artificial.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="filter-container">
+          <button onclick="filterCards('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition">
+            Todos (3)
+          </button>
+          <button onclick="filterCards('ciencia-datos')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+            Ciencia de Datos
+          </button>
+          <button onclick="filterCards('machine-learning')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+            Machine Learning
+          </button>
+          <button onclick="filterCards('intro-ia')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+            Introducción a la IA
+          </button>
+        </div>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- CARD 1: Taller Práctico II (Principal / Destacada) -->
+        <div class="activity-card group glass-card rounded-2xl p-6 flex flex-col justify-between border-brand-500/30 hover:border-brand-500/60 transition-all duration-300 lg:col-span-2 relative overflow-hidden" data-category="ciencia-datos">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-l from-brand-600 to-brand-500 text-white text-[11px] font-mono font-bold uppercase tracking-wider rounded-bl-xl shadow-md">
+            Proyecto Principal del Repositorio
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-3 mt-1">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                Ciencia de Datos
+              </span>
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3 h-3"></i> 100% Completado
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Taller Práctico II</span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-brand-300 transition-colors mb-3">
+              Preparación de Datos para Predicción y Optimización del Consumo Energético
+            </h3>
+
+            <p class="text-sm text-slate-300 leading-relaxed mb-5">
+              Diseño e implementación de un pipeline integral de limpieza, análisis exploratorio y transformación para predecir el consumo de energía en la sede <strong>Duitama de la UPTC</strong>. Se depuraron 155 anomalías físicas negativas, 220 registros duplicados, se imputaron nulos con mediana/moda, se evitaron fugas de datos (<em class="text-brand-300 font-mono">data leakage</em> con CO₂ y potencia) y se construyeron características cíclicas periódicas.
+            </p>
+
+            <!-- Technical details pill grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div>
+                <span class="text-[11px] text-slate-400 uppercase font-mono block">Dataset Crudo</span>
+                <span class="text-sm font-bold text-slate-200">275,387 filas</span>
+              </div>
+              <div>
+                <span class="text-[11px] text-slate-400 uppercase font-mono block">Muestra Limpia</span>
+                <span class="text-sm font-bold text-emerald-400">68,487 horas</span>
+              </div>
+              <div>
+                <span class="text-[11px] text-slate-400 uppercase font-mono block">Train / Test</span>
+                <span class="text-sm font-bold text-violet-400">80% / 20% Temporal</span>
+              </div>
+              <div>
+                <span class="text-[11px] text-slate-400 uppercase font-mono block">Salida ML</span>
+                <span class="text-sm font-bold text-cyan-400">20 Features</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">Python 3.11</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">Pandas</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">NumPy</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">StandardScaler</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">One-Hot Encoding</span>
+              <span class="px-2 py-0.5 rounded text-xs font-mono bg-slate-800 text-slate-300">Time-Series</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800">
+            <div class="flex items-center gap-2">
+              <a href="https://github.com/aleepg07/Ciencia-de-datos/blob/main/Archivo_clase.ipynb" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-medium transition">
+                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                <span>Ver Cuaderno</span>
+              </a>
+              <a href="https://colab.research.google.com/github/aleepg07/Ciencia-de-datos/blob/main/Archivo_clase.ipynb" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition">
+                <i data-lucide="play" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Colab</span>
+              </a>
+              <a href="consumos_duitama_preparado.csv" download
+                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium border border-slate-700 transition">
+                <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>CSV</span>
+              </a>
+            </div>
+            <a href="#pipeline" class="text-xs text-brand-400 hover:text-brand-300 font-medium inline-flex items-center gap-1">
+              Ver detalle de fases <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: Proyecto Final ML (Mantenimiento Predictivo) -->
+        <div class="activity-card group glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-accent-violet/50 transition-all duration-300" data-category="machine-learning">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                Machine Learning
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Proyecto Final</span>
+            </div>
+
+            <h3 class="text-lg font-display font-bold text-white group-hover:text-violet-300 transition-colors mb-2">
+              ¿Fallará esta máquina? Mantenimiento Predictivo con ML
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Modelo predictivo para anticipar fallas operativas en maquinaria industrial usando el conjunto de datos <strong>AI4I 2020 (UCI Repository)</strong> con 10,000 registros y 5 modos de falla física.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-slate-300 mb-5">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-violet-400 mt-0.5 shrink-0"></i>
+                <span>Clasificación binaria en escenarios de clases desbalanceadas.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-violet-400 mt-0.5 shrink-0"></i>
+                <span>Optimización de <strong>Recall</strong> y curva <strong>PR-AUC</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-violet-400 mt-0.5 shrink-0"></i>
+                <span>Evaluación de costos operacionales de falso negativo.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Random Forest</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">PR-AUC</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Imbalanced</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">Módulo Machine Learning</span>
+            <span class="text-violet-400 font-medium">Informe & Presentación</span>
+          </div>
+        </div>
+
+        <!-- CARD 3: Actividad 2 (Introducción a la IA) -->
+        <div class="activity-card group glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-accent-cyan/50 transition-all duration-300 lg:col-span-1" data-category="intro-ia">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                Introducción a la IA
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Actividad 2</span>
+            </div>
+
+            <h3 class="text-lg font-display font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+              Taxonomía, Ramas de la IA y Prompt Engineering
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Estructuración conceptual y taxonómica del ecosistema de la Inteligencia Artificial: diferenciación entre IA Débil y General, ramas de aprendizaje (Supervisado, No Supervisado, Refuerzo) y diseño estructurado de prompts.
+            </p>
+
+            <ul class="space-y-1.5 text-xs text-slate-300 mb-5">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0"></i>
+                <span>Mapa conceptual estructurado de ramas de la IA.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0"></i>
+                <span>Formulación sistemática de PROMPTs de ingeniería.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0"></i>
+                <span>Cuaderno interactivo Prompt_MAPA.ipynb.</span>
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Taxonomía</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">Prompt Engineering</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-800 text-slate-300">NLP</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">Módulo Fundamentos</span>
+            <span class="text-cyan-400 font-medium">Mapa Mental & Notebook</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DETALLE DEL PIPELINE METODOLÓGICO ================= -->
+  <section id="pipeline" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-brand-400 uppercase tracking-widest mb-2">
+          <i data-lucide="workflow" class="w-4 h-4"></i>
+          Arquitectura Metodológica
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+          Pipeline de Preparación de Datos — Consumo Energético UPTC
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Paso a paso de la transformación desde el dato en bruto hasta el conjunto de entrenamiento listo para algoritmos predictivos.
+        </p>
+      </div>
+
+      <!-- 4 Stages Timeline / Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- FASE I -->
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-brand-500 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-brand-400 px-2 py-0.5 bg-brand-500/10 rounded">FASE I</span>
+              <i data-lucide="database" class="w-4 h-4 text-brand-400"></i>
+            </div>
+            <h3 class="text-base font-display font-bold text-white mb-2">Carga y Exploración</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Inspección estructural de 275,387 lecturas horarias multi-sede (Tunja, Duitama, Sogamoso, Chiquinquirá) entre 2018 y 2025 en 26 variables.
+            </p>
+            <ul class="text-[11px] text-slate-400 space-y-1 mb-3 font-mono">
+              <li>• Balance uniforme (~25% / sede)</li>
+              <li>• Detección de 85,801 nulos globales</li>
+              <li>• Diagnóstico de mediciones negativas</li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-mono text-brand-300 pt-2 border-t border-slate-800">
+            df.shape: (275387, 26)
+          </div>
+        </div>
+
+        <!-- FASE II -->
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-accent-emerald flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-emerald-400 px-2 py-0.5 bg-emerald-500/10 rounded">FASE II</span>
+              <i data-lucide="filter" class="w-4 h-4 text-emerald-400"></i>
+            </div>
+            <h3 class="text-base font-display font-bold text-white mb-2">Limpieza y Filtrado</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Aislamiento de la sede Duitama (68,862 filas) y saneamiento riguroso de registros físicamente imposibles y duplicados.
+            </p>
+            <ul class="text-[11px] text-slate-400 space-y-1 mb-3 font-mono">
+              <li>• -155 valores negativos (energía/CO₂)</li>
+              <li>• -220 duplicados en timestamp</li>
+              <li>• Conservación del 99.46% de datos</li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-mono text-emerald-300 pt-2 border-t border-slate-800">
+            Filas retenidas: 68,487
+          </div>
+        </div>
+
+        <!-- FASE III -->
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-accent-violet flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-violet-400 px-2 py-0.5 bg-violet-500/10 rounded">FASE III</span>
+              <i data-lucide="bar-chart-3" class="w-4 h-4 text-violet-400"></i>
+            </div>
+            <h3 class="text-base font-display font-bold text-white mb-2">EDA e Imputación</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Análisis descriptivo y visual por sectores (laboratorios, oficinas, salones, comedor, auditorios). Imputación robusta y correlaciones.
+            </p>
+            <ul class="text-[11px] text-slate-400 space-y-1 mb-3 font-mono">
+              <li>• Mediana en numéricas (0 nulos)</li>
+              <li>• Moda en categóricas</li>
+              <li>• Exclusión de leakage (CO₂ r=0.97)</li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-mono text-violet-300 pt-2 border-t border-slate-800">
+            Nulos restantes: 0
+          </div>
+        </div>
+
+        <!-- FASE IV -->
+        <div class="glass-card rounded-2xl p-5 border-t-4 border-t-accent-cyan flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold text-cyan-400 px-2 py-0.5 bg-cyan-500/10 rounded">FASE IV</span>
+              <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+            </div>
+            <h3 class="text-base font-display font-bold text-white mb-2">Feature Engineering</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              Estandarización de 4 categorías en calendario, One-Hot Encoding, sen/cos cíclico, StandardScaler y partición temporal 80/20.
+            </p>
+            <ul class="text-[11px] text-slate-400 space-y-1 mb-3 font-mono">
+              <li>• One-Hot periodo_academico</li>
+              <li>• hora_sin/cos & mes_sin/cos</li>
+              <li>• Train: 54,789 / Test: 13,698</li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-mono text-cyan-300 pt-2 border-t border-slate-800">
+            Dataset listo: 20 columnas
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPLORADOR DE ARCHIVOS ================= -->
+  <section id="archivos" class="py-16 bg-slate-900/40 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-brand-400 uppercase tracking-widest mb-1">
+            <i data-lucide="files" class="w-4 h-4"></i>
+            Estructura del Proyecto
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+            Archivos del Repositorio
+          </h2>
+          <p class="text-slate-400 text-sm mt-1">
+            Lista completa de artefactos, cuadernos y conjuntos de datos alojados en GitHub.
+          </p>
+        </div>
+
+        <a href="https://github.com/aleepg07/Ciencia-de-datos" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 text-xs font-mono text-brand-400 hover:text-brand-300 transition">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          github.com/aleepg07/Ciencia-de-datos
+        </a>
+      </div>
+
+      <!-- File Table -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-300">
+            <thead class="bg-slate-900/90 text-xs uppercase font-mono text-slate-400 border-b border-slate-800">
+              <tr>
+                <th scope="col" class="py-3.5 px-6">Archivo / Recurso</th>
+                <th scope="col" class="py-3.5 px-6">Tipo</th>
+                <th scope="col" class="py-3.5 px-6">Detalle / Dimensiones</th>
+                <th scope="col" class="py-3.5 px-6">Tamaño</th>
+                <th scope="col" class="py-3.5 px-6 text-right">Acción</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/80 font-sans text-xs sm:text-sm">
+              
+              <!-- Archivo_clase.ipynb -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="file-code-2" class="w-4 h-4 text-brand-400 shrink-0"></i>
+                  <span>Archivo_clase.ipynb</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-mono">
+                    Jupyter Notebook
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  Cuaderno principal con el pipeline de 4 fases (82 celdas con outputs)
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">~458 KB</td>
+                <td class="py-4 px-6 text-right">
+                  <a href="https://github.com/aleepg07/Ciencia-de-datos/blob/main/Archivo_clase.ipynb" target="_blank" rel="noopener noreferrer" 
+                     class="text-brand-400 hover:text-brand-300 font-medium inline-flex items-center gap-1">
+                    Ver en GitHub <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- consumos_duitama_preparado.csv -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="table" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                  <span>consumos_duitama_preparado.csv</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-mono">
+                    Dataset Procesado
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  68,487 filas × 20 columnas (100% numérico, sin nulos, escalado)
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">9.87 MB</td>
+                <td class="py-4 px-6 text-right">
+                  <a href="consumos_duitama_preparado.csv" download 
+                     class="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center gap-1">
+                    Descargar <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- consumos_uptc.csv -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="database" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                  <span>consumos_uptc.csv</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-mono">
+                    Dataset Crudo
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  275,387 filas × 26 columnas (histórico multi-sede UPTC 2018-2025)
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">44.8 MB</td>
+                <td class="py-4 px-6 text-right">
+                  <a href="https://github.com/aleepg07/Ciencia-de-datos/blob/main/consumos_uptc.csv" target="_blank" rel="noopener noreferrer" 
+                     class="text-slate-400 hover:text-slate-200 font-medium inline-flex items-center gap-1">
+                    Ver en Git <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- intrucciones.md -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="file-text" class="w-4 h-4 text-violet-400 shrink-0"></i>
+                  <span>intrucciones.md</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-violet-500/10 text-violet-400 border border-violet-500/20 text-xs font-mono">
+                    Guía de Actividad
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  Requerimientos técnicos y fases metodológicas del Taller Práctico II
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">1.94 KB</td>
+                <td class="py-4 px-6 text-right">
+                  <a href="https://github.com/aleepg07/Ciencia-de-datos/blob/main/intrucciones.md" target="_blank" rel="noopener noreferrer" 
+                     class="text-violet-400 hover:text-violet-300 font-medium inline-flex items-center gap-1">
+                    Ver <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- README.md -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="info" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                  <span>README.md</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-mono">
+                    Documentación
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  Documentación del repositorio, marco institucional y dependencias
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">~4 KB</td>
+                <td class="py-4 px-6 text-right">
+                  <a href="https://github.com/aleepg07/Ciencia-de-datos/blob/main/README.md" target="_blank" rel="noopener noreferrer" 
+                     class="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center gap-1">
+                    Ver <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </a>
+                </td>
+              </tr>
+
+              <!-- index.html -->
+              <tr class="hover:bg-slate-800/40 transition-colors">
+                <td class="py-4 px-6 font-mono font-medium text-white flex items-center gap-3">
+                  <i data-lucide="globe" class="w-4 h-4 text-brand-400 shrink-0"></i>
+                  <span>index.html</span>
+                </td>
+                <td class="py-4 px-6">
+                  <span class="px-2 py-0.5 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-mono">
+                    Sitio Web / Portfolio
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-slate-300">
+                  Página web responsiva del repositorio (compatible con GitHub Pages)
+                </td>
+                <td class="py-4 px-6 font-mono text-slate-400">~22 KB</td>
+                <td class="py-4 px-6 text-right">
+                  <span class="text-xs text-brand-400 font-mono">Esta Página</span>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GITHUB PAGES INSTRUCTIONS ================= -->
+  <section class="py-12 bg-slate-950 border-t border-slate-800/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card p-6 sm:p-8 rounded-2xl border-brand-500/20 flex flex-col md:flex-row items-center gap-6">
+        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center shrink-0">
+          <i data-lucide="sparkles" class="w-7 h-7 text-brand-400"></i>
+        </div>
+        <div class="flex-1 text-center md:text-left">
+          <h3 class="text-lg font-display font-bold text-white mb-1">
+            ¿Cómo activar esta página en vivo con GitHub Pages?
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-400 mb-3">
+            Para que esta web quede pública en internet con enlace propio (<code class="text-brand-300 font-mono">https://aleepg07.github.io/Ciencia-de-datos/</code>):
+          </p>
+          <div class="inline-flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs font-mono text-slate-300 bg-slate-900/90 px-3.5 py-2 rounded-lg border border-slate-800">
+            <span>1. Ve a tu Repo en GitHub</span>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500"></i>
+            <span>2. Settings</span>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500"></i>
+            <span>3. Pages</span>
+            <i data-lucide="chevron-right" class="w-3 h-3 text-slate-500"></i>
+            <span class="text-emerald-400 font-semibold">4. Branch: main & Save</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mt-auto py-8 glass-card border-t border-slate-800 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p>© 2026 <strong>aleepg07</strong> — Universidad Pedagógica y Tecnológica de Colombia (UPTC).</p>
+        <p class="text-[11px] text-slate-600 mt-0.5">Especialización en Inteligencia Artificial · Módulo de Ciencia de Datos</p>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/aleepg07/Ciencia-de-datos" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: Lucide Icons & Category Filtering -->
+  <script>
+    // Inicializar iconos de Lucide
+    lucide.createIcons();
+
+    // Filtro interactivo de tarjetas
+    function filterCards(category) {
+      const cards = document.querySelectorAll('.activity-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Actualizar estilo de botones
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white', 'active');
+        btn.classList.add('bg-slate-800', 'text-slate-300');
+      });
+
+      // Activar botón seleccionado
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-brand-600', 'text-white', 'active');
+
+      // Filtrar tarjetas
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
